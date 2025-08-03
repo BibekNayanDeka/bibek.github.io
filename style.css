@@ -1,0 +1,128 @@
+/* 
+  This CSS file defines the layout and style of the academic profile page.
+  It uses a simple CSS Grid layout system to organize the content.
+*/
+
+/* Basic page styling */
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+  font-family: 'Georgia', serif; /* Clean and simple font */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Main container with grid layout */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "header_prime"
+    "nav"
+    "about"
+    "research"
+    "publications"
+    "contact"
+    "footer";
+  gap: 20px; /* Space between sections */
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+/* Header section */
+.header {
+  grid-area: header;
+  text-align: center;
+  background-color: #EEEEEE;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+/* Headerprime section */
+.header_prime {
+  grid-area: header_prime;
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Navigation bar */
+.nav {
+  grid-area: nav;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  overflow-x: auto; /* Allow nav to scroll on small screens */
+}
+
+.nav ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+.nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Individual sections */
+.about, .research, .publications, .contact {
+  background-color: #f9f9f9; /* Slightly lighter for elegance */
+  padding: 2rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  font-family: 'Georgia', serif; /* Academic and elegant look */
+  line-height: 1.6;
+}
+
+.about { grid-area: about; }
+.research { grid-area: research; }
+.publications { grid-area: publications; }
+.contact { grid-area: contact; }
+
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  text-align: center;
+  font-size: 0.9em;
+  color: #777;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+} 
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav a {
+    display: block;
+    margin-bottom: 10px;
+  }
+} 
